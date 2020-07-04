@@ -1,0 +1,14 @@
+module D_FLIP_FLOP(D, CLK, Q);
+
+input D,CLK;
+output Q;
+
+reg Q;
+
+always @(posedge CLK)
+
+begin 
+	Q = D;
+end
+
+endmodule

@@ -1,0 +1,23 @@
+module ASYNC_CNT(reset, CLK, Q);
+input reset, CLK;
+output [3:0]Q;
+
+reg [3:0]Q;
+
+always @(negedge CLK)
+begin
+	if (reset == 1)
+		Q = 4'b0000;
+	else
+		always @(negedge CLK)
+			Q[0] = ~Q[0];
+		always @(negedge Q[0])
+			Q[1] = ~Q[1];
+		always @(negedge Q[1])
+			Q[2] = ~Q[2];
+		always @(negedge Q[2])
+			Q[3] = ~Q[3];
+end
+
+endmodule
+		

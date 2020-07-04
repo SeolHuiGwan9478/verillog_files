@@ -1,0 +1,25 @@
+module ENC_8TO3(
+	ARR_I, ARR_O
+);
+
+input [7:0]ARR_I;
+output [2:0]ARR_O;
+
+reg[2:0]ARR_O;
+
+always @(ARR_I)
+begin
+	case(ARR_I)
+		8'b00000001:ARR_O = 3'b000;
+		8'b00000010:ARR_O = 3'b001;
+		8'b00000100:ARR_O = 3'b010;
+		8'b00001000:ARR_O = 3'b011;
+		8'b00010000:ARR_O = 3'b100;
+		8'b00100000:ARR_O = 3'b101;
+		8'b01000000:ARR_O = 3'b110;
+		8'b10000000:ARR_O = 3'b111;
+		default:ARR_O = 3'b000;
+	endcase
+end
+
+endmodule

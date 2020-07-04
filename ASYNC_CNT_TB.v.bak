@@ -1,0 +1,30 @@
+`timescale 10ns/1ps
+
+module ASYNC_CNT_TB;
+	
+reg CLK, reset
+wire [3:0]Q
+
+ASYNC_CNT U1(CLK, reset, Q);
+
+initial begin
+			 reset = 1;CLK = 0;
+		#10 reset = 0;CLK = 1;
+		#10 reset = 0;CLK = 0;
+		#10 reset = 0;CLK = 1;
+		#10 reset = 0;CLK = 0;
+		#10 reset = 0;CLK = 1;
+		#10 reset = 0;CLK = 0;
+		#10 reset = 0;CLK = 1;
+		#10 reset=  0;CLK = 0;
+		#10 reset = 0;CLK = 1;
+		#10 reset = 0;CLK = 0;
+		#10 reset = 0;CLK = 1;
+		#10 reset = 0;CLK = 0;
+		#10 reset = 0;CLK = 1;
+		#10 reset = 0;CLK = 0;
+		#10 reset = 0;CLK = 1;			
+
+end
+
+endmodule
